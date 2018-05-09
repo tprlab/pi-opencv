@@ -2,7 +2,7 @@
 This is OpenCV 3.4.1 build for Raspberry Pi (Raspbian Jessie 2017-07-05).
 Source codes are from https://github.com/opencv/opencv
 
-##Known problems
+## Known problems
 During the build some xml files from opencv were not include into the package.
 https://github.com/opencv/opencv/tree/master/data/haarcascades
 I was not able to resolve that problem.
@@ -16,22 +16,24 @@ I used SSD Mobilenet from here:
 http://download.tensorflow.org/models/object_detection/ssd_mobilenet_v1_coco_11_06_2017.tar.gz
 
 To use OpenCV-DNN a couple more files required:
-https://github.com/tprlab/pi-opencv/blob/master/opencv-extra/mscoco_label_map.pbtxt
-https://github.com/tprlab/pi-opencv/blob/master/opencv-extra/ssd_mobilenet_v1_coco.pbtxt
+* [mscoco_label_map] (https://github.com/tprlab/pi-opencv/blob/master/opencv-extra/mscoco_label_map.pbtxt)
+* [ssd_mobilenet_v1_coco] (https://github.com/tprlab/pi-opencv/blob/master/opencv-extra/ssd_mobilenet_v1_coco.pbtxt)
 
 ## Installation
 
 Just like a regular deb package:
 
-'''
+```
 sudo dpkg -i opencv_3_4-raspian_jessie.deb
-'''
+```
 
 ## Usage
 
+
 Python sample:
 
-'''
+
+```
 import cv2 as cv
 import tf_labels
 import sys
@@ -64,7 +66,7 @@ for detection in cvOut[0,0,:,:]:
 
 cv.imshow('img', img)
 cv.waitKey()
-'''
+```
 
 The module tf_labels and its dependencies can be downloaded from here:
 https://github.com/tprlab/pi-opencv/blob/master/samples/dnn
