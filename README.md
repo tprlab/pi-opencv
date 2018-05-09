@@ -4,7 +4,7 @@ This is OpenCV 3.4.1 build for Raspberry Pi (Raspbian Jessie 2017-07-05).
 Source codes are from https://github.com/opencv/opencv
 
 ## Known problems
-During the build some xml files from opencv were not include into the package.
+During the build some xml files from opencv were not included into the package.
 
 https://github.com/opencv/opencv/tree/master/data/haarcascades
 
