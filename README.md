@@ -4,20 +4,27 @@ Source codes are from https://github.com/opencv/opencv
 
 ## Known problems
 During the build some xml files from opencv were not include into the package.
+
 https://github.com/opencv/opencv/tree/master/data/haarcascades
+
 I was not able to resolve that problem.
+
 So please download the missed files from their origin or from this repo:
+
 https://github.com/tprlab/pi-opencv/tree/master/opencv-extra/haarcascades
 
 ## DNN
 I built OpenCV primarily to use its DNN module for images detection with Tensorflow.
+
 So far Tensorflow-provided network graphs are normally going ahead of OpenCV development, the latest Tensorflow graph versions are not compatible with this build.
+
 I used SSD Mobilenet from here:
+
 http://download.tensorflow.org/models/object_detection/ssd_mobilenet_v1_coco_11_06_2017.tar.gz
 
 To use OpenCV-DNN a couple more files required:
-* [mscoco_label_map] (https://github.com/tprlab/pi-opencv/blob/master/opencv-extra/mscoco_label_map.pbtxt)
-* [ssd_mobilenet_v1_coco] (https://github.com/tprlab/pi-opencv/blob/master/opencv-extra/ssd_mobilenet_v1_coco.pbtxt)
+* [mscoco_label_map](https://github.com/tprlab/pi-opencv/blob/master/opencv-extra/mscoco_label_map.pbtxt)
+* [ssd_mobilenet_v1_coco](https://github.com/tprlab/pi-opencv/blob/master/opencv-extra/ssd_mobilenet_v1_coco.pbtxt)
 
 ## Installation
 
@@ -69,10 +76,15 @@ cv.waitKey()
 ```
 
 The module tf_labels and its dependencies can be downloaded from here:
+
 https://github.com/tprlab/pi-opencv/blob/master/samples/dnn
+
 This is a wrapper to read the labels for detected classes.
+
 It is based on slightly modified sources of Tensorflow (to get rid the dependence of Tensorflow itself).
+
 The original sources are here:
+
 https://github.com/tensorflow/models/blob/master/research/object_detection/utils/label_map_util.py
 
 
